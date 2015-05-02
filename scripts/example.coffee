@@ -18,5 +18,5 @@ module.exports = (robot) ->
     str  = "#{year}年#{month}月#{date}日"
     str += "#{hour}時#{min}分#{sec}秒"
 
-    fs.appendFile "message.txt", "\n" + str + " " + msg.envelope.user.name " " + msg.match[1].replace(/slack-logger/, ""), (error) ->
+    fs.appendFile "message.txt", "\n" + str + " " + msg.envelope.user.name + " " + msg.match[1].replace(/slack-logger/, ""), (error) ->
       msg.send "Error writing file" if error
